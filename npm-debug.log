@@ -1,0 +1,37 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\develoment\\node\\node.exe',
+1 verbose cli   'D:\\develoment\\node\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'start' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.1
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle test@1.0.0~prestart: test@1.0.0
+6 silly lifecycle test@1.0.0~prestart: no script for prestart, continuing
+7 info lifecycle test@1.0.0~start: test@1.0.0
+8 verbose lifecycle test@1.0.0~start: unsafe-perm in lifecycle true
+9 verbose lifecycle test@1.0.0~start: PATH: D:\develoment\node\node_modules\npm\bin\node-gyp-bin;C:\Users\admin\Desktop\github\xunlei-project\node_modules\.bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\develoment\Git\Git\cmd;D:\develoment\node\;D:\develoment\Java\jdk1.8.0_144\bin;D:\develoment\Java\jdk1.8.0_144\jre\bin;D:\develoment\apache-maven-3.5.0\bin;C:\Users\admin\AppData\Local\Microsoft\WindowsApps;C:\Users\admin\AppData\Roaming\npm;C:\Users\admin\AppData\Roaming\npm;D:\develoment\Egret Wing 3\bin;C:\Users\admin\AppData\Local\Programs\Fiddler;D:\develoment\Microsoft VS Code\bin
+10 verbose lifecycle test@1.0.0~start: CWD: C:\Users\admin\Desktop\github\xunlei-project
+11 silly lifecycle test@1.0.0~start: Args: [ '/d /s /c',
+11 silly lifecycle   'node command/start.js cross-env NODE_ENV=develoment' ]
+12 verbose stack Error: kill ENOSYS
+12 verbose stack     at exports._errnoException (util.js:1018:11)
+12 verbose stack     at process.kill (internal/process.js:190:13)
+12 verbose stack     at process.listener (D:\develoment\node\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+12 verbose stack     at emitNone (events.js:91:20)
+12 verbose stack     at process.emit (events.js:185:7)
+12 verbose stack     at processEmit (D:\develoment\node\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at processEmit (D:\develoment\node\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+12 verbose stack     at Signal.wrap.onsignal (internal/process.js:217:44)
+13 verbose cwd C:\Users\admin\Desktop\github\xunlei-project
+14 error Windows_NT 10.0.15063
+15 error argv "D:\\develoment\\node\\node.exe" "D:\\develoment\\node\\node_modules\\npm\\bin\\npm-cli.js" "run" "start"
+16 error node v6.11.1
+17 error npm  v3.10.10
+18 error code ENOSYS
+19 error errno ENOSYS
+20 error syscall kill
+21 error kill ENOSYS
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]

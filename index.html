@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>迅雷U享版 优享会员下载时光</title>
+    <script>
+      var version = (function () {
+        var b = document.createElement('b')
+        b.innerHTML = '<!--[if lte IE 8]><i></i><![endif]-->'
+        return b.getElementsByTagName('i').length === 1
+      })()
+      if (version) {
+        var flag = window.location.href.indexOf('//u.xunlei.com/upgradebrowser/') == -1
+        if (flag) {
+          window.location.href = '//u.xunlei.com/upgradebrowser/'
+        }
+      }
+    </script>
+    <script>
+      var xla = window.xla || (window.xla = [])
+      xla.push({
+        type: 'config',
+        appid: 20005,
+        secret: '67f99340ea657912a5237f256cf40034'
+      })
+      var s = document.createElement('script')
+      s.type = 'text/javascript'
+      s.async = true
+      s.src = '//res-etl-ssl.xunlei.com/v1.0.0/xla.min.js'
+      var x = document.getElementsByTagName('script')[0]
+      x.parentNode.insertBefore(s, x)
+
+    </script>
+  </head>
+  <body class="scrollBox" id="bodyContainer">
+    <!-- 自定义滚动条 s -->
+	  <div class="svSlider">
+    	<div class="svbar"></div>
+  	</div>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

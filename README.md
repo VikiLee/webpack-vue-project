@@ -1,6 +1,6 @@
 # vue_modules
 
-> 迅雷U享版
+> webpack-vue模块划分 分别运行和打包，各个模块之间项目独立而不相互影响，且支持明显新建模块删除模块
 
 ## Build Setup
 

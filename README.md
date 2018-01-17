@@ -1,7 +1,10 @@
 # vue_webpack with modules separated
 
 > webpack-vue模块划分，分别运行和打包子模块而不影响其他模块（各个模块之间项目独立而不相互影响），且支持新建模块和删除模块功能(无需手动新建/删除模块)
-以往项目当中，打包自己做的模块时会影响到他人的模块，如果打包时出现错误（冲突之类的）然后提交，就会造成严重后果
+以往项目当中，打包自己做的模块时会影响到他人的模块，如果打包时出现错误（冲突之类的）然后提交，一旦发布到线上就会造成严重后果。
+1、集成vue+webpack，无需关注webpack的配置
+2、解耦各个模块（功能），运行和打包相互独立
+3、命令行实现新建模块，解放双手
 
 ## Build Setup
 
@@ -20,7 +23,7 @@
 
 ## 结构说明
 ````
-modeuls #所有模块文件夹
+modules #所有模块文件夹
 └───   assets #所有模块共用的静态文件
 │    │   css
 │    │   img
@@ -40,5 +43,7 @@ modeuls #所有模块文件夹
 │   │     │  index.html #模块模板文件
 │   │     │  main.js #模块入口文件，文件名不要修改！！！
 ````
-
+## 其他
+1、import的时候@表示modules目录下，如import '@/assets/css/test.css'，表示导入modules/assets/css/test/css
+2、import的时候@src表示各个模块的根目录，如import '@src/assets/css/test.css'，表示导入modules/src/:module_name/assets/css/test.css
 

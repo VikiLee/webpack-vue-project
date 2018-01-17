@@ -28,7 +28,7 @@ modeuls #所有模块文件夹
 └───   components #所有模块公用vue子模块，比如header.vue
 └───src #所有模块的源码文件夹
 │   └─── module_name #模块名
-│   │   └─── assets #该模块特有的静态文件
+│   │     └─── assets #该模块特有的静态文件
 │   │           │   css
 │   │           │   img
 │   │           │   js

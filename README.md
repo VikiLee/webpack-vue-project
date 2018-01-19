@@ -1,30 +1,49 @@
-# vue_modules
+# vue_webpack with modules separated
 
-> webpack-vue模块划分 分别运行和打包，各个模块之间项目独立而不相互影响，且支持明显新建模块删除模块
+> webpack-vue模块划分，分别运行和打包子模块而不影响其他模块（各个模块之间项目独立而不相互影响），且支持新建模块和删除模块功能(无需手动新建/删除模块)
+以往项目当中，打包自己做的模块时会影响到他人的模块，如果打包时出现错误（冲突之类的）然后提交，一旦发布到线上就会造成严重后果。
+1、集成vue+webpack，无需关注webpack的配置
+2、解耦各个模块（功能），运行和打包相互独立
+3、命令行实现新建模块，解放双手
 
 ## Build Setup
 
 ``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+#安装依赖
+1. npm install
+#新建模块，按提示输入模块名
+2. npm run create
+#运行模块，按提示输入模块名
+3. npm run start
+#打包模块，按提示输入模块名
+4. npm run build
+#删除模块，按提示输入要删除的模块名
+5. rpm run rm
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 结构说明
+````
+modules #所有模块文件夹
+└───   assets #所有模块共用的静态文件
+│    │   css
+│    │   img
+│    │   js
+└───   common #所有模块公用的js代码，比如util.js
+└───   components #所有模块公用vue子模块，比如header.vue
+└───src #所有模块的源码文件夹
+│   └─── module_name #模块名
+│   │     └─── assets #该模块特有的静态文件
+│   │           │   css
+│   │           │   img
+│   │           │   js
+│   │     └─── components #该模块特用vue子模块
+│   │     └─── router #该模块特用vue路由设置
+│   │     └─── util #该模块特用共有类js
+│   │     │  App.vue #容器
+│   │     │  index.html #模块模板文件
+│   │     │  main.js #模块入口文件，文件名不要修改！！！
+````
+## 其他
+1、import的时候@表示modules目录下，如import '@/assets/css/test.css'，表示导入modules/assets/css/test/css
+2、import的时候@src表示各个模块的根目录，如import '@src/assets/css/test.css'，表示导入modules/src/:module_name/assets/css/test.css
+

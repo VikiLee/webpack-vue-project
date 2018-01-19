@@ -44,6 +44,7 @@ modules #所有模块文件夹
 │   │     │  main.js #模块入口文件，文件名不要修改！！！
 ````
 ## 其他
-1、import的时候@表示modules目录下，如import '@/assets/css/test.css'，表示导入modules/assets/css/test/css
-2、import的时候@src表示各个模块的根目录，如import '@src/assets/css/test.css'，表示导入modules/src/:module_name/assets/css/test.css
-
+1、import的时候@表示modules目录下，如import '@/assets/css/test.css'，表示导入modules/assets/css/test/css  
+2、import的时候@src表示各个模块的根目录，如import '@src/assets/css/test.css'，表示导入modules/src/:module_name/assets/css/test.css  
+3、生产环境下，build静态文件的设置在config/index下，这里可以设置静态文件生产路径和cdn路径  
+ 

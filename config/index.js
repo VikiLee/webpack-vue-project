@@ -54,10 +54,9 @@ module.exports = {
     // index: path.resolve(__dirname, '../../index.html'),
 
     // Paths
-    // assetsRoot: path.resolve(__dirname, '../../../img.sns.vip.kanimg.com'),
-    assetsRoot: path.resolve(__dirname, '../static'),
-    assetsSubDirectory: 'u/assets',
-    assetsPublicPath: 'http://img-xyx-ssl.a.88cdn.com/',
+    assetsRoot: path.resolve(__dirname, '../static'), // 静态文件地址
+    assetsSubDirectory: 'assets',
+    assetsPublicPath: '/static', // 如果有cdn，配置成cdn
 
     /**
      * Source Maps

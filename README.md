@@ -47,4 +47,18 @@ modules #所有模块文件夹
 1、import的时候@表示modules目录下，如import '@/assets/css/test.css'，表示导入modules/assets/css/test/css  
 2、import的时候@src表示各个模块的根目录，如import '@src/assets/css/test.css'，表示导入modules/src/:module_name/assets/css/test.css  
 3、生产环境下，build静态文件的设置在config/index下，这里可以设置静态文件生产路径和cdn路径  
- 
+```
+    assetsRoot: path.resolve(__dirname, '../static'), // 打包的静态文件地址，该地址打包到项目根目录下  
+    assetsSubDirectory: 'xxx/xxx', //静态文件子路径  
+    assetsPublicPath: 'xxx', // 如果有cdn，配置成cdn
+```
+4、webpack.prod.conf.js的CopyWebpackPlugin配置需要复制到的静态文件地址
+```javascript
+new CopyWebpackPlugin([
+{
+        from: path.resolve(__dirname, '../static'), // 需要复制到的地址，这里复制到根目录的static目录下
+        to: config.build.assetsSubDirectory,
+        ignore: ['.*']
+      }
+])
+```

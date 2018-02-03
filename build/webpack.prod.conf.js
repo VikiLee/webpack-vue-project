@@ -29,7 +29,9 @@ var webpackConfig = merge(baseWebpackConfig, {
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
-      'process.env': env
+      'process.env': env,
+      'assetsPublicPath': JSON.stringify(config.build.assetsPublicPath),
+      'assetsSubDirectory': JSON.stringify(config.build.assetsSubDirectory)
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -92,7 +94,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     // copy custom static assets
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '../static'),
+        from: utils.getModulePath() + '/assets',
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }

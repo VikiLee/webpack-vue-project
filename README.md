@@ -50,7 +50,7 @@ modules #所有模块文件夹
 ```javascript
 build: {
     assetsRoot: path.resolve(__dirname, '../static'), // 打包的静态文件地址，该地址打包到项目根目录下  
-    assetsSubDirectory: 'xxx/xxx', //静态文件子路径  
+    assetsSubDirectory: 'xxx/assets/' + moduleName + '/', //静态文件子路径  
     assetsPublicPath: 'xxx', // 如果有cdn，配置成cdn
     }
 ```

@@ -3,6 +3,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
+var moduleName = process.argv[2]
 
 module.exports = {
   dev: {
@@ -55,7 +56,7 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../static'), // 静态文件地址
-    assetsSubDirectory: 'assets',
+    assetsSubDirectory: 'xxx/assets/' + moduleName + '/', //静态文件子路径
     assetsPublicPath: '/static', // 如果有cdn，配置成cdn
 
     /**

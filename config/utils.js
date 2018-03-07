@@ -1,4 +1,6 @@
 var path = require('path')
+var glob = require('glob')
+var fs = require('fs')
 var config = require('../config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
@@ -70,15 +72,21 @@ exports.styleLoaders = function (options) {
   return output
 }
 
+// 获取项目地址
+exports.getProjectPath = () => {
+  console.log(fs.realpathSync(process.cwd()))
+  return fs.realpathSync(process.cwd())
+}
+
 //获取模块路径
 exports.getModule = () => {
-  return process.cwd() + '/modules'
+  return exports.getProjectPath() + '/modules'
 }
 
 //获取子模块路径, 如modules/views/test/
 exports.getModulePath = () => {
   var moduleName = process.argv[2]
-  return process.cwd() + '/modules/src/' + moduleName
+  return exports.getProjectPath() + '/modules/src/' + moduleName
 }
 
 //获取子模块的入口文件，如modules/views/test/main.js
@@ -87,12 +95,22 @@ exports.getEntry = () => {
 }
 
 //获取子模块的模板文件
-exports.getModuleTemplate = () => {
+exports.getModuleTemplate = (globPath) => {
   var moduleName = process.argv[2]
-  return 'modules/src/' + moduleName + '/index.html'
+  globPath = globPath || 'modules/src/' + moduleName 
+  var path = glob.sync(globPath + '/index.html')
+  if(path.length > 0) {
+    return path[0]
+  } else {
+    //取上级目录下的模板文件路径
+    if(globPath.lastIndexOf('/') !== -1) {
+      globPath = globPath.substr(0, globPath.lastIndexOf('/'))
+      return exports.getModuleTemplate(globPath)
+    }
+  }
 }
 //获取生成的文件
 exports.getOuputFileName = () => {
   var moduleName = process.argv[2]
-  return process.cwd() + `/${moduleName}/index.html`
+  return exports.getProjectPath + `/../${moduleName}/index.html`
 }

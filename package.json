@@ -1,8 +1,8 @@
 {
   "name": "test",
   "version": "1.0.0",
-  "description": "迅雷U享版",
-  "author": "liweiji <liweiji@xunlei.com>",
+  "description": "test",
+  "author": "liweiji <l874279721@qq.com>",
   "private": true,
   "scripts": {
     "create": "node command/create.js",
